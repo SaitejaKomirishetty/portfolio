@@ -1,0 +1,17 @@
+/* Dark theme styles */
+.dark {
+    --bg-color: #34353a;
+    --text-color: #a1a1aa;
+}
+
+/* Light theme styles */
+.light {
+    --bg-color: #fff;
+    --text-color: #71717a;
+}
+
+/* Apply background and text color based on theme */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
