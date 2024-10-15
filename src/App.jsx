@@ -13,6 +13,7 @@ import {
     IconNewSection,
     IconTerminal2,
 } from '@tabler/icons-react';
+import HeroSection from './components/HeroSection';
 
 const links = [
     {
@@ -82,6 +83,7 @@ function App() {
     return (
         <div className='p-4 md:p-6 lg:p-8 xl:p-10 2xl:p-12'>
             <NavBar />
+            <HeroSection />
             asdfasdfasdf
             <div className=''>
                 <FloatingDock

@@ -10,10 +10,21 @@ const Navbar = () => {
     const toggleDrawer = () => {
         setIsOpen((prevState) => !prevState);
     };
+    const links = [
+        {
+            title: 'About',
+        },
+        {
+            title: 'Skills',
+        },
+        {
+            title: 'Projects',
+        },
+    ];
 
     return (
         <div>
-            <div className='grid grid-cols-2 grid-rows-1'>
+            <div className='lg:hidden grid grid-cols-2 grid-rows-1'>
                 <img src={SaitejaLogo} className='h-10 w-10' />
                 <div className='flex items-center justify-end gap-2'>
                     <ThemeToggle />
@@ -27,10 +38,21 @@ const Navbar = () => {
                     direction='right'
                     className=''
                 >
-                    <div className='dark:bg-[#34353a] h-full'>
-                        
-                    </div>
+                    <div className='dark:bg-[#34353a] h-full'></div>
                 </Drawer>
+            </div>
+            <div className='hidden lg:flex items-center justify-between'>
+                <div className='flex items-center gap-2'>
+                    <img src={SaitejaLogo} className='h-10 w-10' />
+                    <p>Saiteja Komirishetty</p>
+                </div>
+                <div className='flex items-center justify-evenly w-full'>
+                    {links.map((link) => {
+                        return <div>{link.title}</div>;
+                    })}
+                </div>
+
+                <ThemeToggle />
             </div>
         </div>
     );
