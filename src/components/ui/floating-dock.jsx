@@ -13,13 +13,13 @@ import {
     useSpring,
     useTransform,
 } from 'framer-motion';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { useRef, useState } from 'react';
 
- const handleClick = (e,path) => {
-     e.preventDefault();
-     window.open(path, '_blank');
- };
+const handleClick = (e, path) => {
+    e.preventDefault();
+    window.open(path, '_blank');
+};
 
 export const FloatingDock = ({ items, desktopClassName, mobileClassName }) => {
     return (
@@ -59,14 +59,14 @@ const FloatingDockMobile = ({ items, className }) => {
                                     delay: (items.length - 1 - idx) * 0.05,
                                 }}
                             >
-                                <Link
+                                <a
                                     to={item.href}
                                     href={item.href}
                                     key={item.title}
                                     className='h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-900 flex items-center justify-center'
                                 >
                                     <div className='h-4 w-4'>{item.icon}</div>
-                                </Link>
+                                </a>
                             </motion.div>
                         ))}
                     </motion.div>
@@ -148,7 +148,7 @@ function IconContainer({ mouseX, title, icon, href }) {
     const [hovered, setHovered] = useState(false);
 
     return (
-        <Link href={href} to={href} onClick={(e)=>handleClick(e,href)}>
+        <a href={href} to={href} onClick={(e) => handleClick(e, href)}>
             <motion.div
                 ref={ref}
                 style={{ width, height }}
@@ -175,6 +175,6 @@ function IconContainer({ mouseX, title, icon, href }) {
                     {icon}
                 </motion.div>
             </motion.div>
-        </Link>
+        </a>
     );
 }
