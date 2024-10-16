@@ -2,16 +2,21 @@
 .dark {
     --bg-color: #34353a;
     --text-color: #a1a1aa;
+    --icon-fill-color: #f59e0b;
 }
 
 /* Light theme styles */
 .light {
     --bg-color: #fff;
     --text-color: #71717a;
+    --icon-fill-color: black;
 }
 
 /* Apply background and text color based on theme */
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
+}
+.fill-color {
+    fill: var(--icon-fill-color); /* Change this variable in your CSS */
 }
