@@ -18,18 +18,13 @@ jobs:
               with:
                   node-version: '20'
 
-            - name: Install dependencies and build
-              run: |
-                  npm install
-                  npm run build  # Ensure you're building the project first
+            - name: Install dependencies
+              run: npm install
 
-            - name: Configure Git
-              run: |
-                  git config --global user.name "github-actions[bot]"
-                  git config --global user.email "github-actions[bot]@users.noreply.github.com"
+            - name: Build
+              run: npm run build
 
-            - name: Deploy to GitHub Pages
+            - name: Deploy
+              run: npm run deploy
               env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Pass the GitHub token as an environment variable
-              run: |
-                  npx gh-pages -d dist
+                  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
