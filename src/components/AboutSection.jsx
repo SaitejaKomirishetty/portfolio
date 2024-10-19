@@ -4,7 +4,7 @@ const AboutSection = () => {
   return <div>
     <h1>About Me</h1>
     <div className='flex items-start justify-center gap-2'>
-        <div className='min-w-20 border-t-4 h-20 mt-3'></div>
+        <div className='min-w-20 dark:border-amber-500 border-t-4 h-20 mt-3'></div>
         <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem aliquam aut error nostrum, vel corporis iusto esse odio in facilis eveniet perferendis quam voluptatibus consequuntur, quasi non iure molestiae ea!
         Nobis iusto commodi ipsum fugit, quod ducimus animi sed doloribus harum quasi fuga nihil, vel, tempora aspernatur quaerat rem corrupti tempore odit incidunt quam ut est dolorem sequi voluptates! Reprehenderit!
         Ducimus qui, praesentium, repellat veritatis rem sapiente consectetur, magni odio enim ipsum numquam quia velit porro molestiae quasi esse at totam animi ab vitae? Porro sit quibusdam accusamus aperiam eius?

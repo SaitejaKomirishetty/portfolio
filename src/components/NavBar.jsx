@@ -1,12 +1,15 @@
 import { useState } from 'react';
 import Drawer from 'react-modern-drawer';
 import 'react-modern-drawer/dist/index.css';
-import ThemeToggle from './ThemeSwitcher/ThemeToggle';
 import { MenuIcon } from 'lucide-react';
 import SaitejaIcon from '../assets/saitejaIcon';
+import { DarkModeSwitch } from 'react-toggle-dark-mode';
+import { useTheme } from '../hooks/ThemeContext';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+
+    const { theme, toggleTheme } = useTheme();
     const toggleDrawer = () => {
         setIsOpen((prevState) => !prevState);
     };
@@ -27,7 +30,17 @@ const Navbar = () => {
             <div className='lg:hidden grid grid-cols-2 grid-rows-1'>
                 <SaitejaIcon />
                 <div className='flex items-center justify-end gap-2'>
-                    <ThemeToggle />
+                    <div
+                        className='p-2 cursor-pointer bg-white dark:bg-gray-800 rounded-full shadow-md hover:shadow-lg dark:hover:bg-[#27272a] hover:bg-[#f4f4f5] transition-shadow duration-200 hover:scale-110'
+                        onClick={toggleTheme}
+                    >
+                        <DarkModeSwitch
+                            checked={theme === 'light'}
+                            moonColor='black'
+                            sunColor='#fde047'
+                            size={20}
+                        />
+                    </div>
                     <button onClick={toggleDrawer}>
                         <MenuIcon />
                     </button>
@@ -51,8 +64,17 @@ const Navbar = () => {
                         return <div>{link.title}</div>;
                     })}
                 </div>
-
-                <ThemeToggle />
+                <div
+                    className='p-2 cursor-pointer bg-white dark:bg-gray-800 rounded-full shadow-md hover:shadow-lg dark:hover:bg-[#27272a] hover:bg-[#f4f4f5] transition-shadow duration-200 hover:scale-110'
+                    onClick={toggleTheme}
+                >
+                    <DarkModeSwitch
+                        checked={theme === 'light'}
+                        moonColor='black'
+                        sunColor='#fde047'
+                        size={25}
+                    />
+                </div>
             </div>
         </div>
     );

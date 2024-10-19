@@ -1,6 +1,6 @@
 /* Dark theme styles */
 .dark {
-    --bg-color: #34353a;
+    --bg-color: #090312;
     --text-color: #a1a1aa;
     --icon-fill-color: #f59e0b;
 }
@@ -14,7 +14,7 @@
 
 /* Apply background and text color based on theme */
 body {
-    background-color: var(--bg-color);
+    background-color: var(--bg-color) !important;
     color: var(--text-color);
 }
 .fill-color {

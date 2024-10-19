@@ -83,9 +83,11 @@ const links = [
 function App() {
     return (
         <div className='p-4 md:p-6 lg:p-8 xl:p-10 2xl:p-12'>
-            <NavBar />
+            <div className='sticky top-0 bg-opacity-28 rounded-lg  backdrop-blur-[7.6px] p-2'>
+                <NavBar />
+            </div>
             <HeroSection />
-            <AboutSection/>
+            <AboutSection />
             <div className=''>
                 <FloatingDock
                     items={links}
