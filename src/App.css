@@ -7,7 +7,7 @@
 
 /* Light theme styles */
 .light {
-    --bg-color: #ff0000;
+    --bg-color: #fff;
     --text-color: #71717a;
     --icon-fill-color: black;
 }
