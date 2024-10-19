@@ -1,33 +1,34 @@
 name: Deploy to GitHub Pages
 
 on:
-  push:
-    branches:
-      - master  # Change this to main if your default branch is main
+    push:
+        branches:
+            - master
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
+    deploy:
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '18'  # or any version you need
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: '18'
 
-      - name: Install dependencies
-        run: npm install
+            - name: Install dependencies and build
+              run: |
+                  npm ci
+                  npm run build
 
-      - name: Build the project
-        run: npm run build
-
-      - name: Deploy to GitHub Pages
-        uses: JamesIArmes/github-pages-deploy-action@4.1.2
-        with:
-          branch: gh-pages  # The branch to deploy to
-          folder: dist      # The folder to deploy (default is 'dist' for Vite)
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            - name: Deploy to GitHub Pages
+              run: |
+                  cd dist
+                  git init
+                  git config user.name "github-actions[bot]"
+                  git config user.email "github-actions[bot]@users.noreply.github.com"
+                  git add .
+                  git commit -m "Deploy to GitHub Pages"
+                  git push --force "https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" master:gh-pages

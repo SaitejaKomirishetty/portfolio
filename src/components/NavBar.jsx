@@ -27,7 +27,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className='lg:hidden grid grid-cols-2 grid-rows-1'>
+            <div className='sm:hidden grid grid-cols-2 grid-rows-1'>
                 <SaitejaIcon />
                 <div className='flex items-center justify-end gap-2'>
                     <div
@@ -54,7 +54,7 @@ const Navbar = () => {
                     <div className='dark:bg-[#34353a] h-full'></div>
                 </Drawer>
             </div>
-            <div className='hidden lg:flex items-center justify-between sticky top-0 left-0'>
+            <div className='hidden sm:flex items-center justify-between sticky top-0 left-0'>
                 <div className='flex items-center gap-2'>
                     <SaitejaIcon />
                     <p>Saiteja Komirishetty</p>
