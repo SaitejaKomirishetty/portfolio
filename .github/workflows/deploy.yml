@@ -21,25 +21,10 @@ jobs:
             - name: Install dependencies and build
               run: |
                   npm install
-                  git config user.name "github-actions[bot]"
-                  git config user.email "github-actions[bot]@users.noreply.github.com"
-                  npm run deploy
+                  npm run build  # Ensure you're building the project first
 
-            # # Debugging step to check if the build was successful
-            # - name: Debug - List build output
-            #   run: |
-            #       ls -al
-            #       ls -al dist
-
-            # - name: Deploy to GitHub Pages
-            #   run: |
-            #       cd dist
-            #       git init
-            #       git config user.name "github-actions[bot]"
-            #       git config user.email "github-actions[bot]@users.noreply.github.com"
-            #       git add .
-            #       git commit -m "Deploy to GitHub Pages"
-
-            #       # Use GitHub Token to push to gh-pages
-            #       git remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
-            #       git push --force origin master:gh-pages
+            - name: Deploy to GitHub Pages
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Pass the GitHub token as an environment variable
+              run: |
+                  npx gh-pages -d dist --token $GITHUB_TOKEN  # Use the gh-pages command to deploy
