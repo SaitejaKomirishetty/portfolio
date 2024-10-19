@@ -2,9 +2,9 @@ import { useState } from 'react';
 import Drawer from 'react-modern-drawer';
 import 'react-modern-drawer/dist/index.css';
 import { MenuIcon } from 'lucide-react';
-import SaitejaIcon from '../assets/saitejaIcon';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import { useTheme } from '../hooks/ThemeContext';
+import SaitejaIcon from './SaitejaIcon';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
