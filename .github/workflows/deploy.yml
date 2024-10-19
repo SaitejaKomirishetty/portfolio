@@ -23,8 +23,13 @@ jobs:
                   npm install
                   npm run build  # Ensure you're building the project first
 
+            - name: Configure Git
+              run: |
+                  git config --global user.name "github-actions[bot]"
+                  git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
             - name: Deploy to GitHub Pages
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Pass the GitHub token as an environment variable
               run: |
-                  npx gh-pages -d dist  # Use the gh-pages command to deploy
+                  npx gh-pages -d dist
