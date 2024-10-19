@@ -27,4 +27,4 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Pass the GitHub token as an environment variable
               run: |
-                  npx gh-pages -d dist --token $GITHUB_TOKEN  # Use the gh-pages command to deploy
+                  npx gh-pages -d dist  # Use the gh-pages command to deploy
