@@ -16,12 +16,18 @@ jobs:
             - name: Set up Node.js
               uses: actions/setup-node@v3
               with:
-                  node-version: 20
+                  node-version: '20'
 
             - name: Install dependencies and build
               run: |
                   npm install
                   npm run build
+
+            # Debugging step to check if the build was successful
+            - name: Debug - List build output
+              run: |
+                  ls -al
+                  ls -al dist
 
             - name: Deploy to GitHub Pages
               run: |
