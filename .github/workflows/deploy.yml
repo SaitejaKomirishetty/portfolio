@@ -8,6 +8,9 @@ on:
 jobs:
     deploy:
         runs-on: ubuntu-latest
+        permissions:
+            id-token: write # Add this line
+            contents: write # This may also be necessary to push changes
 
         steps:
             - name: Checkout code
@@ -26,3 +29,5 @@ jobs:
 
             - name: Deploy to GitHub Pages
               uses: bitovi/github-actions-react-to-github-pages@v1.2.4
+              with:
+                  token: ${{ secrets.GITHUB_TOKEN }} # Ensure you're using the GITHUB_TOKEN
