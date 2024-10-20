@@ -21,6 +21,9 @@ const Navbar = () => {
             title: 'Skills',
         },
         {
+            title: 'Experience',
+        },
+        {
             title: 'Projects',
         },
     ];
@@ -60,7 +63,7 @@ const Navbar = () => {
                     <SaitejaIcon />
                     <p>Saiteja Komirishetty</p>
                 </div>
-                <div className='flex items-center justify-center  w-full gap-60 cursor-pointer'>
+                <div className='flex items-center justify-center  w-full gap-20 cursor-pointer'>
                     {links.map((link, index) => {
                         return <div key={index}>{link.title}</div>;
                     })}
