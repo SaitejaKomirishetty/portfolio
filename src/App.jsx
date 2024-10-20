@@ -15,6 +15,11 @@ import {
 } from '@tabler/icons-react';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
+import SkillsSection from './components/SkillsSection';
+import Experience from './components/Experience';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 const links = [
     {
@@ -82,20 +87,27 @@ const links = [
 
 function App() {
     return (
-        <div className='p-4 md:p-6 lg:p-8 xl:p-10 2xl:p-12'>
-            <div className='sticky top-0 bg-opacity-28 rounded-lg  backdrop-blur-[7.6px] p-2'>
+        <div>
+            <div className='fixed top-0 bg-opacity-28 backdrop-blur-[7.6px] p-2 w-full'>
                 <NavBar />
             </div>
-            <HeroSection />
-            <AboutSection />
-            <div className=''>
-                <FloatingDock
-                    items={links}
-                    desktopClassName={
-                        'fixed bottom-5 left-1/2 transform -translate-x-1/2'
-                    }
-                    mobileClassName={'fixed bottom-5 right-5'}
-                />
+            <div className='p-4 md:p-6 lg:p-8 xl:p-10 2xl:p-12'>
+                <HeroSection />
+                <AboutSection />
+                <SkillsSection />
+                <Experience />
+                <Projects />
+                <Contact />
+                <Footer />
+                <div className=''>
+                    <FloatingDock
+                        items={links}
+                        desktopClassName={
+                            'fixed bottom-5 left-1/2 transform -translate-x-1/2'
+                        }
+                        mobileClassName={'!fixed bottom-5 right-5'}
+                    />
+                </div>
             </div>
         </div>
     );
