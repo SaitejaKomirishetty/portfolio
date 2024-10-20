@@ -88,7 +88,7 @@ const links = [
 function App() {
     return (
         <div>
-            <div className='fixed top-0 bg-opacity-28 backdrop-blur-[7.6px] p-2 w-full'>
+            <div className='fixed top-0 bg-opacity-28 backdrop-blur-[7.6px] p-2 w-full z-50'>
                 <NavBar />
             </div>
             <div className='p-4 md:p-6 lg:p-8 xl:p-10 2xl:p-12'>
