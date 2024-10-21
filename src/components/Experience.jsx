@@ -25,8 +25,11 @@ const Experience = () => {
             >
                 <div className='space-y-3 pl-10'>
                     <h3 className='text-3xl items-baseline gap-3 flex font-semibold'>
-                        Torry Harris Integration Solutions -  
-                        <span className='text-lg'> Associate Software Engineer</span>
+                        Torry Harris Integration Solutions -
+                        <span className='text-lg'>
+                            {' '}
+                            Associate Software Engineer
+                        </span>
                     </h3>
                     <p>
                         <em>Bangalore | August 2023 - Present</em>
@@ -59,8 +62,8 @@ const Experience = () => {
                             features more effectively and efficiently.
                         </li>
                         <li>
-                            Supervised a team of more than 5 in the development
-                            of a marketplace portal.
+                            Supervised a team of more than 5 people in the
+                            development of a marketplace portal.
                         </li>
                         <li>
                             Collaborated with a team of 30 to achieve project
@@ -95,7 +98,9 @@ const Experience = () => {
                         </li>
                     </ul>
                 </div>
-                <div className='w-1/2'>{isDesktop && <BadgeComponent />}</div>
+                <div className='w-1/2 h-full'>
+                    {isDesktop && <BadgeComponent />}
+                </div>
             </div>
         </div>
     );
