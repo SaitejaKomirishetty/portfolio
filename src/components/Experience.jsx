@@ -1,27 +1,49 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import BadgeComponent from './BadgeComponent';
 
 const Experience = () => {
     const [isDesktop, setIsDesktop] = useState(false);
+    const [isBadgeVisible, setIsBadgeVisible] = useState(false);
+    const badgeRef = useRef(null);
 
     useEffect(() => {
         const checkDeviceType = () => {
             const userAgent = navigator.userAgent;
-            console.log('==>', userAgent);
-
             const isDesktopDevice = /windows|macintosh/i.test(userAgent);
             setIsDesktop(isDesktopDevice);
         };
         checkDeviceType();
     }, []);
 
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsBadgeVisible(true);
+                    observer.disconnect(); // Stop observing after loading
+                }
+            },
+            { threshold: 0.1 } // Adjust the threshold as needed
+        );
+
+        if (badgeRef.current) {
+            observer.observe(badgeRef.current);
+        }
+
+        return () => {
+            if (badgeRef.current) {
+                observer.unobserve(badgeRef.current);
+            }
+        };
+    }, [badgeRef]);
+
     return (
-        <div className=' space-y-9'>
+        <div className='space-y-9'>
             <h2 className='text-5xl font-bold text-center'>Experience</h2>
             <div
-                className={`${
+                className={`flex justify-center ${
                     isDesktop ? 'h-[600px] justify-between items-center' : ''
-                } flex justify-center`}
+                }`}
             >
                 <div className='space-y-3 pl-10'>
                     <h3 className='text-3xl items-baseline gap-3 flex font-semibold'>
@@ -98,8 +120,9 @@ const Experience = () => {
                         </li>
                     </ul>
                 </div>
-                <div className='w-1/2 h-full'>
-                    {isDesktop && <BadgeComponent />}
+
+                <div className='w-1/2 h-full' ref={badgeRef}>
+                    {isDesktop && isBadgeVisible && <BadgeComponent />}
                 </div>
             </div>
         </div>
