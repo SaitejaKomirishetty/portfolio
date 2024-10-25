@@ -38,18 +38,18 @@ const Experience = () => {
     }, [badgeRef]);
 
     return (
-        <div className='space-y-9'>
-            <h2 className='text-5xl font-bold text-center'>Experience</h2>
+        <div>
+            <h2 className='text-5xl font-bold text-center mb-5'>Experience</h2>
             <div
                 className={`flex justify-center ${
-                    isDesktop ? 'h-[600px] justify-between items-center' : ''
+                    isDesktop ? 'min-h-[600px] justify-between items-center' : ''
                 }`}
             >
-                <div className='space-y-3 pl-10'>
-                    <h3 className='text-3xl items-baseline gap-3 flex font-semibold'>
-                        Torry Harris Integration Solutions -
+                <div className='space-y-3 lg:pl-10'>
+                    <h3 className='text-3xl items-baseline gap-2 flex font-semibold'>
+                        <span>Torry Harris Integration Solutions</span>
+                        <span>-</span>
                         <span className='text-lg'>
-                            {' '}
                             Associate Software Engineer
                         </span>
                     </h3>

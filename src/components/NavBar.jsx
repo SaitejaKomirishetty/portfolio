@@ -30,7 +30,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className='sm:hidden grid grid-cols-2 grid-rows-1'>
+            <div className='md:hidden grid grid-cols-2 grid-rows-1'>
                 <SaitejaIcon />
                 <div className='flex items-center justify-end gap-2'>
                     <div
@@ -58,7 +58,7 @@ const Navbar = () => {
                     <div className='dark:bg-[#34353a] h-full'></div>
                 </Drawer>
             </div>
-            <div className='hidden sm:flex items-center justify-between px-20 py-3'>
+            <div className='hidden md:flex items-center justify-between px-20 py-2'>
                 <div className='flex items-center gap-2'>
                     <SaitejaIcon />
                     <p>Saiteja Komirishetty</p>
