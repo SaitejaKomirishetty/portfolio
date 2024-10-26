@@ -3,8 +3,8 @@ import React from 'react';
 const SaitejaIcon = () => {
     return (
         <svg
-            width='56'
-            height='56'
+            width='36'
+            height='36'
             viewBox='0 0 56 56'
             fill='none'
             xmlns='http://www.w3.org/2000/svg'

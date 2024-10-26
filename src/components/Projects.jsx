@@ -1,9 +1,11 @@
 import React from 'react';
+import ProjectList from './ProjectList';
 
 const Projects = () => {
     return (
-        <div className='my-20'>
-            <div className='text-center text-lg font-bold'>Projects</div>
+        <div className='mt-20'>
+            <div className='text-center text-4xl font-bold'>Projects</div>
+            <ProjectList />
         </div>
     );
 };

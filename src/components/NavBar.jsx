@@ -61,7 +61,7 @@ const Navbar = () => {
             <div className='hidden md:flex items-center justify-between px-20 py-2'>
                 <div className='flex items-center gap-2'>
                     <SaitejaIcon />
-                    <p>Saiteja Komirishetty</p>
+                    <p className='text-nowrap'>Saiteja Komirishetty</p>
                 </div>
                 <div className='flex items-center justify-center  w-full gap-20 cursor-pointer'>
                     {links.map((link, index) => {
