@@ -1,6 +1,4 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
+import { useRef } from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
 import { FloatingDock } from './components/ui/floating-dock';
@@ -86,17 +84,34 @@ const links = [
 ];
 
 function App() {
+    const aboutRef = useRef(null);
+    const skillsRef = useRef(null);
+    const experienceRef = useRef(null);
+    const projectsRef = useRef(null);
     return (
         <div>
             <div className='fixed top-0 bg-opacity-28 backdrop-blur-[7.6px] p-2 w-full z-50'>
-                <NavBar />
+                <NavBar
+                    aboutRef={aboutRef}
+                    skillsRef={skillsRef}
+                    experienceRef={experienceRef}
+                    projectsRef={projectsRef}
+                />
             </div>
             <div className='p-4 md:p-6 lg:p-8 xl:p-10 2xl:p-12'>
                 <HeroSection />
-                <AboutSection />
-                <SkillsSection />
-                <Experience />
-                <Projects />
+                <section ref={aboutRef} id='about'>
+                    <AboutSection />
+                </section>
+                <section ref={skillsRef} id='skills'>
+                    <SkillsSection />
+                </section>
+                <section ref={experienceRef} id='experience'>
+                    <Experience />
+                </section>
+                <section ref={projectsRef} id='projects'>
+                    <Projects />
+                </section>
                 <Contact />
                 <Footer />
                 <div className=''>

@@ -1,6 +1,10 @@
 import React from 'react';
 import ProjectCard from './ProjectCard';
-import { IconBrandCss3, IconBrandHtml5, IconBrandReact } from '@tabler/icons-react';
+import {
+    IconBrandCss3,
+    IconBrandHtml5,
+    IconBrandReact,
+} from '@tabler/icons-react';
 
 const ProjectList = () => {
     const projectList = [
@@ -101,7 +105,11 @@ const ProjectList = () => {
     return (
         <div className='flex flex-col items-center'>
             {projectList.map((project, index) => (
-                <ProjectCard key={index} project={project} index={index} />
+                <ProjectCard
+                    key={`${project.name}-${index}`}
+                    project={project}
+                    index={index}
+                />
             ))}
         </div>
     );

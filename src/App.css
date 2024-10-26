@@ -16,6 +16,7 @@
 body {
     background-color: var(--bg-color) !important;
     color: var(--text-color);
+    overscroll-behavior: none;
 }
 .fill-color {
     fill: var(--icon-fill-color); /* Change this variable in your CSS */

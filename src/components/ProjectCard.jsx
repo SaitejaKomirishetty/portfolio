@@ -3,6 +3,7 @@ const ProjectCard = ({ project, index }) => {
     const isEven = index % 2 === 0;
     return (
         <div
+            key={index}
             className={`flex flex-col md:flex-row ${
                 isEven ? 'md:flex-row' : 'md:flex-row-reverse'
             } items-center gap-4 p-4 rounded-lg shadow-sm mx-auto my-4`}
@@ -16,8 +17,8 @@ const ProjectCard = ({ project, index }) => {
                 </h2>
                 <p className='text-sm md:text-base'>{project.description}</p>
                 <div className='flex gap-2 my-2'>
-                    {project.techStack.map((Icon) => (
-                        <div key={Icon.key}>{Icon}</div>
+                    {project.techStack.map((Icon, index) => (
+                        <div key={index}>{Icon}</div>
                     ))}
                 </div>
                 <div className='flex gap-4'>

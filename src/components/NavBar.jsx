@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Drawer from 'react-modern-drawer';
 import 'react-modern-drawer/dist/index.css';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
@@ -6,7 +6,7 @@ import { useTheme } from '../hooks/ThemeContext';
 import SaitejaIcon from './SaitejaIcon';
 import { IconMenu2 } from '@tabler/icons-react';
 
-const Navbar = () => {
+const Navbar = ({ aboutRef, skillsRef, experienceRef, projectsRef }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const { theme, toggleTheme } = useTheme();
@@ -16,17 +16,37 @@ const Navbar = () => {
     const links = [
         {
             title: 'About',
+            ref: aboutRef,
         },
         {
             title: 'Skills',
+            ref: skillsRef,
         },
         {
             title: 'Experience',
+            ref: experienceRef,
         },
         {
             title: 'Projects',
+            ref: projectsRef,
         },
     ];
+
+    const scrollToSection = (ref) => {
+        if (ref.current) {
+            const offset = 80; // Your desired offset
+            const elementPosition = ref.current.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - offset;
+            if (isOpen) {
+                setIsOpen(false);
+            }
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth',
+            });
+        }
+    };
 
     return (
         <div>
@@ -55,7 +75,18 @@ const Navbar = () => {
                     className=''
                     zIndex={50}
                 >
-                    <div className='dark:bg-[#34353a] h-full'></div>
+                    <div className='dark:bg-[#34353a] h-full flex flex-col items-center justify-evenly'>
+                        {links.map((section, index) => {
+                            return (
+                                <div
+                                    key={index}
+                                    onClick={() => scrollToSection(section.ref)}
+                                >
+                                    {section.title}
+                                </div>
+                            );
+                        })}
+                    </div>
                 </Drawer>
             </div>
             <div className='hidden md:flex items-center justify-between px-20 py-2'>
@@ -64,8 +95,15 @@ const Navbar = () => {
                     <p className='text-nowrap'>Saiteja Komirishetty</p>
                 </div>
                 <div className='flex items-center justify-center  w-full gap-20 cursor-pointer'>
-                    {links.map((link, index) => {
-                        return <div key={index}>{link.title}</div>;
+                    {links.map((section, index) => {
+                        return (
+                            <div
+                                key={index}
+                                onClick={() => scrollToSection(section.ref)}
+                            >
+                                {section.title}
+                            </div>
+                        );
                     })}
                 </div>
                 <div
@@ -73,6 +111,7 @@ const Navbar = () => {
                     onClick={toggleTheme}
                 >
                     <DarkModeSwitch
+                        onChange={() => console.log(theme)}
                         checked={theme === 'light'}
                         moonColor='black'
                         sunColor='#fde047'

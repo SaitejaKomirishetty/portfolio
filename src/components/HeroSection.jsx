@@ -1,7 +1,13 @@
 import React from 'react';
 import saiteja from '/DSC_9370-removebg 1.png';
 import { FlipWords } from './ui/flip-words';
-const words = ['front end developer', 'web developer', 'software engineer'];
+const words = [
+    'Front End Developer',
+    'Web Developer',
+    'Software Engineer',
+    'Computer Science Student',
+    'F1 enthusiast',
+];
 
 const HeroSection = () => {
     return (
@@ -14,7 +20,7 @@ const HeroSection = () => {
                     </span>
                 </p>
                 i'm a
-                <FlipWords words={words} duration={2000} className={'-z-10'}/>
+                <FlipWords words={words} duration={2000} className={'-z-10'} />
             </div>
             <img src={saiteja} alt='my photo' className=' mt-0' />
         </div>
