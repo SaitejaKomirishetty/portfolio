@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import Drawer from 'react-modern-drawer';
 import 'react-modern-drawer/dist/index.css';
-import { MenuIcon } from 'lucide-react';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import { useTheme } from '../hooks/ThemeContext';
 import SaitejaIcon from './SaitejaIcon';
+import { IconMenu2 } from '@tabler/icons-react';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -45,7 +45,7 @@ const Navbar = () => {
                         />
                     </div>
                     <button onClick={toggleDrawer}>
-                        <MenuIcon />
+                        <IconMenu2 />
                     </button>
                 </div>
                 <Drawer
