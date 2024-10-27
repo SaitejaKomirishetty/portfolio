@@ -90,7 +90,7 @@ function App() {
     const projectsRef = useRef(null);
     return (
         <div>
-            <div className='fixed top-0 bg-opacity-28 backdrop-blur-[7.6px] p-2 w-full z-50'>
+            <div className='fixed top-0 bg-opacity-28 backdrop-blur-[7.6px] w-full z-50'>
                 <NavBar
                     aboutRef={aboutRef}
                     skillsRef={skillsRef}
@@ -98,7 +98,7 @@ function App() {
                     projectsRef={projectsRef}
                 />
             </div>
-            <div className='p-4 md:p-6 lg:p-8 xl:p-10 2xl:p-12'>
+            <div className='p-4 md:p-6 lg:p-8 xl:p-10 2xl:p-12 mx-5 md:mx-10 lg:mx-20  md:space-y-10 lg:space-y-16 xl:space-y-20 2xl:space-y-32'>
                 <HeroSection />
                 <section ref={aboutRef} id='about'>
                     <AboutSection />

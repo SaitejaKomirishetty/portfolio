@@ -44,18 +44,18 @@ const skills = [
 
 const SkillsSection = () => {
     return (
-        <div className='m-10 lg:m-20 text-center space-y-5 '>
-            <h1 className='text-3xl font-bold' >SKILLS & TOOLS </h1>
-            <p >
-                The skills, tools and technologies I use to bring your products
-                to life:
+        <div className='text-center space-y-5 '>
+            <h1 className='text-3xl font-bold'>SKILLS & TOOLS </h1>
+            <p>
+                The skills, tools and technologies I use to bring ideas to life:
             </p>
             <div className='flex gap-2 lg:gap-6 justify-center flex-wrap'>
-                {skills.map((skill,index) => (
-                    <div key={index} className='flex flex-col justify-center items-center'>
-                        <div className='hover:motion-preset-confetti'>
-                            {skill.icon}
-                        </div>
+                {skills.map((skill, index) => (
+                    <div
+                        key={index}
+                        className='flex flex-col justify-center items-center hover:scale-110'
+                    >
+                        <div className=''>{skill.icon}</div>
                         <p>{skill.title}</p>
                     </div>
                 ))}

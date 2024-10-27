@@ -49,8 +49,9 @@ const Navbar = ({ aboutRef, skillsRef, experienceRef, projectsRef }) => {
     };
 
     return (
-        <div>
-            <div className='md:hidden grid grid-cols-2 grid-rows-1'>
+        <div className='w-full'>
+            {/* Mobile View */}
+            <div className='md:hidden grid grid-cols-2 grid-rows-1 p-2'>
                 <SaitejaIcon />
                 <div className='flex items-center justify-end gap-2'>
                     <div
@@ -76,47 +77,47 @@ const Navbar = ({ aboutRef, skillsRef, experienceRef, projectsRef }) => {
                     zIndex={50}
                 >
                     <div className='dark:bg-[#34353a] h-full flex flex-col items-center justify-evenly'>
-                        {links.map((section, index) => {
-                            return (
-                                <div
-                                    key={index}
-                                    onClick={() => scrollToSection(section.ref)}
-                                >
-                                    {section.title}
-                                </div>
-                            );
-                        })}
-                    </div>
-                </Drawer>
-            </div>
-            <div className='hidden md:flex items-center justify-between px-20 py-2'>
-                <div className='flex items-center gap-2'>
-                    <SaitejaIcon />
-                    <p className='text-nowrap'>Saiteja Komirishetty</p>
-                </div>
-                <div className='flex items-center justify-center  w-full gap-20 cursor-pointer'>
-                    {links.map((section, index) => {
-                        return (
+                        {links.map((section, index) => (
                             <div
                                 key={index}
                                 onClick={() => scrollToSection(section.ref)}
+                                className='py-2 text-center'
                             >
                                 {section.title}
                             </div>
-                        );
-                    })}
+                        ))}
+                    </div>
+                </Drawer>
+            </div>
+
+            {/* Desktop View */}
+            <div className='hidden md:flex items-center justify-between px-5 md:px-10 lg:px-20 py-3'>
+                <div className='flex items-center gap-2'>
+                    <SaitejaIcon />
+                    {/* <p className='text-nowrap text-lg'>Saiteja Komirishetty</p> */}
                 </div>
-                <div
-                    className='p-2 h-fit w-fit cursor-pointer bg-white dark:bg-gray-800 rounded-full shadow-md hover:shadow-lg dark:hover:bg-[#27272a] hover:bg-[#f4f4f5] transition-shadow duration-200 hover:scale-110'
-                    onClick={toggleTheme}
-                >
-                    <DarkModeSwitch
-                        onChange={() => console.log(theme)}
-                        checked={theme === 'light'}
-                        moonColor='black'
-                        sunColor='#fde047'
-                        size={25}
-                    />
+                <div className='flex items-center justify-end w-full gap-10 cursor-pointer'>
+                    {links.map((section, index) => (
+                        <div
+                            key={index}
+                            onClick={() => scrollToSection(section.ref)}
+                            className='hover:text-blue-500 transition-colors'
+                        >
+                            {section.title}
+                        </div>
+                    ))}
+                    <div
+                        className='p-2 h-fit w-fit cursor-pointer bg-white dark:bg-gray-800 rounded-full shadow-md hover:shadow-lg dark:hover:bg-[#27272a] hover:bg-[#f4f4f5] transition-shadow duration-200 hover:scale-110'
+                        onClick={toggleTheme}
+                    >
+                        <DarkModeSwitch
+                            onChange={() => console.log(theme)}
+                            checked={theme === 'light'}
+                            moonColor='black'
+                            sunColor='#fde047'
+                            size={25}
+                        />
+                    </div>
                 </div>
             </div>
         </div>

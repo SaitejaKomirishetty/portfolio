@@ -41,12 +41,14 @@ const Experience = () => {
         <div>
             <h2 className='text-5xl font-bold text-center mb-5'>Experience</h2>
             <div
-                className={`flex justify-center ${
-                    isDesktop ? 'min-h-[600px] justify-between items-center' : ''
+                className={`flex  ${
+                    isDesktop
+                        ? 'min-h-[600px] justify-between items-center'
+                        : 'justify-center'
                 }`}
             >
                 <div className='space-y-3 lg:pl-10'>
-                    <h3 className='text-3xl items-baseline gap-2 flex font-semibold'>
+                    <h3 className='text-3xl flex items-baseline gap-2  font-semibold'>
                         <span>Torry Harris Integration Solutions</span>
                         <span>-</span>
                         <span className='text-lg'>
@@ -120,7 +122,6 @@ const Experience = () => {
                         </li>
                     </ul>
                 </div>
-
                 <div className='w-1/2 h-full' ref={badgeRef}>
                     {isDesktop && isBadgeVisible && <BadgeComponent />}
                 </div>

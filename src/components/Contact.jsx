@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Contact() {
     return (
-        <section className=' flex items-center justify-center px-4 pb-8 '>
+        <section className=' flex items-center justify-center '>
             <div className='max-w-lg w-full'>
                 {/* Contact Header */}
                 <div className='text-center mb-8'>

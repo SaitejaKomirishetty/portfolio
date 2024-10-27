@@ -2,16 +2,15 @@ import React from 'react';
 import saiteja from '/DSC_9370-removebg 1.png';
 import { FlipWords } from './ui/flip-words';
 const words = [
-    'Front End Developer',
+    'FrontEnd Developer',
     'Web Developer',
     'Software Engineer',
-    'Computer Science Student',
-    'F1 enthusiast',
+    'F1 Enthusiast',
 ];
 
 const HeroSection = () => {
     return (
-        <div className='w-full my-16 lg:my-32 lg:gap-60 flex flex-col lg:flex-row items-center justify-center'>
+        <div className='w-full lg:gap-60 flex flex-col lg:flex-row items-center justify-center mt-20'>
             <div>
                 <p>
                     I'm
@@ -19,8 +18,14 @@ const HeroSection = () => {
                         SAITEJA
                     </span>
                 </p>
-                i'm a
-                <FlipWords words={words} duration={2000} className={'-z-10'} />
+                <span className='text-3xl'>
+                    I'm a
+                    <FlipWords
+                        words={words}
+                        duration={2000}
+                        className={'-z-10 text-3xl'}
+                    />
+                </span>
             </div>
             <img src={saiteja} alt='my photo' className=' mt-0' />
         </div>
