@@ -48,9 +48,10 @@ const Experience = () => {
                 }`}
             >
                 <div className='space-y-3 lg:pl-10'>
-                    <h3 className='text-3xl flex items-baseline gap-2  font-semibold'>
-                        <span>Torry Harris Integration Solutions</span>
-                        <span>-</span>
+                    <h3 className=' flex flex-col items-baseline gap-2 font-semibold'>
+                        <span className='text-xl md:text-3xl font-bold'>
+                            Torry Harris Integration Solutions
+                        </span>
                         <span className='text-lg'>
                             Associate Software Engineer
                         </span>
@@ -58,7 +59,7 @@ const Experience = () => {
                     <p>
                         <em>Bangalore | August 2023 - Present</em>
                     </p>
-                    <ul className='list-disc px-10'>
+                    <ul className='list-disc px-2 lg:px-10 w-full'>
                         <li>
                             Developed and implemented user-friendly, responsive
                             interfaces compatible with various platforms and
@@ -122,7 +123,7 @@ const Experience = () => {
                         </li>
                     </ul>
                 </div>
-                <div className='w-1/2 h-full' ref={badgeRef}>
+                <div className='w-0 h-0 md:w-1/2 md:h-full' ref={badgeRef}>
                     {isDesktop && isBadgeVisible && <BadgeComponent />}
                 </div>
             </div>

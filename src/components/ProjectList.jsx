@@ -103,13 +103,9 @@ const ProjectList = () => {
     ];
 
     return (
-        <div className='flex flex-col items-center'>
+        <div className='grid grid-cols-1 md:grid-cols-2  gap-4'>
             {projectList.map((project, index) => (
-                <ProjectCard
-                    key={`${project.name}-${index}`}
-                    project={project}
-                    index={index}
-                />
+                <ProjectCard key={index} project={project} />
             ))}
         </div>
     );

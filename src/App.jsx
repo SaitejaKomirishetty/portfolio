@@ -98,7 +98,7 @@ function App() {
                     projectsRef={projectsRef}
                 />
             </div>
-            <div className='p-4 md:p-6 lg:p-8 xl:p-10 2xl:p-12 mx-5 md:mx-10 lg:mx-20  md:space-y-10 lg:space-y-16 xl:space-y-20 2xl:space-y-32'>
+            <div className='p-4 md:p-6 lg:p-8 xl:p-10 2xl:p-12 mx-5 md:mx-10 lg:mx-20 space-y-5  md:space-y-10 lg:space-y-16 xl:space-y-20 2xl:space-y-32'>
                 <HeroSection />
                 <section ref={aboutRef} id='about'>
                     <AboutSection />

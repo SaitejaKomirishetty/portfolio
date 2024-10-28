@@ -23,7 +23,7 @@ const HeroSection = () => {
                     <FlipWords
                         words={words}
                         duration={2000}
-                        className={'-z-10 text-3xl'}
+                        className={'-z-10 text-3xl block md:inline'}
                     />
                 </span>
             </div>

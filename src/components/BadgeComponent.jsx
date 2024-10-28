@@ -32,7 +32,7 @@ export default function BadgeComponent() {
     return (
         <div className='relative w-full overflow-hidden'>
             <Background />
-            <div className='absolute top-0 left-0 z-10 flex items-center justify-center h-full '>
+            <div className='absolute top-0 left-0 z-10 flex items-center justify-center h-full w-full '>
                 <Canvas camera={{ position: [0, 0, 13], fov: 25 }}>
                     <ambientLight intensity={Math.PI} />
                     <Physics
