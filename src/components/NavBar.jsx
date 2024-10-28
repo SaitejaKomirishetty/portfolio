@@ -6,7 +6,13 @@ import { useTheme } from '../hooks/ThemeContext';
 import SaitejaIcon from './SaitejaIcon';
 import { IconMenu2 } from '@tabler/icons-react';
 
-const Navbar = ({ aboutRef, skillsRef, experienceRef, projectsRef }) => {
+const Navbar = ({
+    aboutRef,
+    skillsRef,
+    experienceRef,
+    projectsRef,
+    contactRef,
+}) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const { theme, toggleTheme } = useTheme();
@@ -29,6 +35,10 @@ const Navbar = ({ aboutRef, skillsRef, experienceRef, projectsRef }) => {
         {
             title: 'Projects',
             ref: projectsRef,
+        },
+        {
+            title: 'Contact',
+            ref: contactRef,
         },
     ];
 

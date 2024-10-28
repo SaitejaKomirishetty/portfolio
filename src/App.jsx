@@ -4,12 +4,9 @@ import NavBar from './components/NavBar';
 import { FloatingDock } from './components/ui/floating-dock';
 import {
     IconBrandGithub,
+    IconBrandInstagram,
     IconBrandLinkedin,
     IconBrandX,
-    IconExchange,
-    IconHome,
-    IconNewSection,
-    IconTerminal2,
 } from '@tabler/icons-react';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
@@ -28,58 +25,25 @@ const links = [
         href: 'https://www.linkedin.com/in/saiteja-komirishetty',
     },
     {
-        title: 'Home',
-        icon: (
-            <IconHome className='h-full w-full text-neutral-500 dark:text-neutral-300' />
-        ),
-        href: '#',
-    },
-
-    {
-        title: 'Products',
-        icon: (
-            <IconTerminal2 className='h-full w-full text-neutral-500 dark:text-neutral-300' />
-        ),
-        href: '#',
-    },
-    {
-        title: 'Components',
-        icon: (
-            <IconNewSection className='h-full w-full text-neutral-500 dark:text-neutral-300' />
-        ),
-        href: '#',
-    },
-    {
-        title: 'Aceternity UI',
-        icon: (
-            <img
-                src='https://assets.aceternity.com/logo-dark.png'
-                alt='Aceternity Logo'
-            />
-        ),
-        href: '#',
-    },
-    {
-        title: 'Changelog',
-        icon: (
-            <IconExchange className='h-full w-full text-neutral-500 dark:text-neutral-300' />
-        ),
-        href: '#',
-    },
-
-    {
         title: 'Twitter',
         icon: (
             <IconBrandX className='h-full w-full text-neutral-500 dark:text-neutral-300' />
         ),
-        href: '#',
+        href: 'https://x.com/SAITEJAKOMIRIS1',
     },
     {
         title: 'GitHub',
         icon: (
             <IconBrandGithub className='h-full w-full text-neutral-500 dark:text-neutral-300' />
         ),
-        href: '#',
+        href: 'https://github.com/SaitejaKomirishetty',
+    },
+    {
+        title: 'Instagram',
+        icon: (
+            <IconBrandInstagram className='h-full w-full text-neutral-500 dark:text-neutral-300' />
+        ),
+        href: 'https://www.instagram.com/saitejakomirishetty/',
     },
 ];
 
@@ -88,6 +52,7 @@ function App() {
     const skillsRef = useRef(null);
     const experienceRef = useRef(null);
     const projectsRef = useRef(null);
+    const contactRef = useRef(null);
     return (
         <div>
             <div className='fixed top-0 bg-opacity-28 backdrop-blur-[7.6px] w-full z-50'>
@@ -96,6 +61,7 @@ function App() {
                     skillsRef={skillsRef}
                     experienceRef={experienceRef}
                     projectsRef={projectsRef}
+                    contactRef={contactRef}
                 />
             </div>
             <div className='p-4 md:p-6 lg:p-8 xl:p-10 2xl:p-12 mx-5 md:mx-10 lg:mx-20 space-y-5  md:space-y-10 lg:space-y-16 xl:space-y-20 2xl:space-y-32'>
@@ -112,7 +78,9 @@ function App() {
                 <section ref={projectsRef} id='projects'>
                     <Projects />
                 </section>
-                <Contact />
+                <section ref={contactRef} id='contact'>
+                    <Contact />
+                </section>
                 <Footer />
                 <div className=''>
                     <FloatingDock
