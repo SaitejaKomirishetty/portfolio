@@ -17,7 +17,7 @@ const ProjectList = () => {
                 <IconBrandCss3 />,
             ],
             imageLink: (
-                <img src='https://raw.githubusercontent.com/SaitejaKomirishetty/coffee-website/refs/heads/main/Images/home.png.png' />
+                <img src='https://raw.githubusercontent.com/SaitejaKomirishetty/coffee-website/refs/heads/main/Images/home.png.png' alt='testing'/>
             ),
             liveDemoLink:
                 'https://saitejakomirishetty.github.io/coffee-website/',
