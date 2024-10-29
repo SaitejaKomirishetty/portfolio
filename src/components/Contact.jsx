@@ -1,6 +1,8 @@
 import React from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 
 export default function Contact() {
+    const [state, handleSubmit] = useForm('mwpkvjwa');
     return (
         <section className=' flex items-center justify-center '>
             <div className='max-w-lg w-full'>
@@ -19,9 +21,6 @@ export default function Contact() {
                         rel='noopener noreferrer'
                     >
                         <button className='mt-6 px-4 py-2 bg-gray-800  hover:bg-gray-700 text-white font-semibold rounded shadow inline-flex items-center'>
-                            <span role='img' aria-label='email'>
-                                📧
-                            </span>{' '}
                             E-Mail
                         </button>
                     </a>
@@ -29,33 +28,65 @@ export default function Contact() {
 
                 {/* Send a Message Form */}
                 <div>
-                    <h2 className='text-xl font-semibold mb-4'>
-                        Send a message
-                    </h2>
-                    <form className='space-y-4'>
-                        <div className='flex space-x-4'>
-                            <input
-                                type='text'
-                                placeholder='Name'
-                                className='w-1/2 p-2 dark:bg-gray-800 bg-gray-100 rounded focus:outline-none focus:ring-2 focus:ring-gray-600'
-                            />
-                            <input
-                                type='email'
-                                placeholder='Email'
-                                className='w-1/2 p-2 dark:bg-gray-800 bg-gray-100  rounded focus:outline-none focus:ring-2 focus:ring-gray-600'
-                            />
-                        </div>
-                        <textarea
-                            placeholder='Message'
-                            className='w-full p-2 dark:bg-gray-800 bg-gray-100  rounded focus:outline-none focus:ring-2 focus:ring-gray-600 h-32'
-                        ></textarea>
-                        <button
-                            type='submit'
-                            className='w-full py-2 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded shadow'
-                        >
-                            Send now
-                        </button>
-                    </form>
+                    {state.succeeded ? (
+                        <p className='text-center'>Thanks for Your Message!</p>
+                    ) : (
+                        <>
+                            <h2 className='text-xl font-semibold mb-4'>
+                                Send a message
+                            </h2>
+                            <form onSubmit={handleSubmit} className='space-y-4'>
+                                <div className='flex space-x-4'>
+                                    <input
+                                        type='text'
+                                        placeholder='Name'
+                                        name='name'
+                                        id='name'
+                                        required
+                                        className='w-1/2 p-2 dark:bg-gray-800 bg-gray-100 rounded focus:outline-none focus:ring-2 focus:ring-gray-600'
+                                    />
+                                    <ValidationError
+                                        prefix='Name'
+                                        field='name'
+                                        errors={state.errors}
+                                    />
+                                    <input
+                                        type='email'
+                                        name='email'
+                                        id='email'
+                                        placeholder='Email'
+                                        required
+                                        className='w-1/2 p-2 dark:bg-gray-800 bg-gray-100 rounded focus:outline-none focus:ring-2 focus:ring-gray-600'
+                                    />
+                                    <ValidationError
+                                        prefix='Email'
+                                        field='email'
+                                        errors={state.errors}
+                                    />
+                                </div>
+                                <textarea
+                                    name='message'
+                                    placeholder='Message'
+                                    id='message'
+                                    required
+                                    className='w-full p-2 dark:bg-gray-800 bg-gray-100 rounded focus:outline-none focus:ring-2 focus:ring-gray-600 h-32'
+                                ></textarea>
+                                <ValidationError
+                                    prefix='Message'
+                                    field='message'
+                                    errors={state.errors}
+                                />
+
+                                <button
+                                    type='submit'
+                                    disabled={state.submitting}
+                                    className='w-full py-2 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded shadow'
+                                >
+                                    Send now
+                                </button>
+                            </form>
+                        </>
+                    )}
                 </div>
             </div>
         </section>
