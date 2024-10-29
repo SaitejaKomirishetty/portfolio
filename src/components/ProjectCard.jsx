@@ -4,9 +4,9 @@ const ProjectCard = ({ project }) => {
         <div
             className={`flex flex-col items-center gap-4  rounded-lg shadow-sm `}
         >
-            <div className='md:relative group w-full'>
-                <div className='absolute inset-0 bg-black opacity-0 group-hover:opacity-60 transition-opacity duration-300'></div>
-                <div className='absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-4'>
+            <div className='relative group w-full'>
+                <div className='md:absolute inset-0 bg-black opacity-0 group-hover:opacity-60 transition-opacity duration-300'></div>
+                <div className='hidden md:absolute inset-0 md:flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-4'>
                     {project.codeLink && (
                         <a
                             href={project.codeLink}
