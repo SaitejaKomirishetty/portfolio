@@ -1,19 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
 import BadgeComponent from './BadgeComponent';
 
-const Experience = () => {
-    const [isDesktop, setIsDesktop] = useState(false);
+const Experience = ({ isDesktop }) => {
     const [isBadgeVisible, setIsBadgeVisible] = useState(false);
     const badgeRef = useRef(null);
-
-    useEffect(() => {
-        const checkDeviceType = () => {
-            const userAgent = navigator.userAgent;
-            const isDesktopDevice = /windows|macintosh/i.test(userAgent);
-            setIsDesktop(isDesktopDevice);
-        };
-        checkDeviceType();
-    }, []);
 
     useEffect(() => {
         const observer = new IntersectionObserver(

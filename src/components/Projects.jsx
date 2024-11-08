@@ -4,7 +4,7 @@ import ProjectList from './ProjectList';
 const Projects = () => {
     return (
         <div className=' my-2 md:my-0'>
-            <div className='text-center text-4xl font-bold mb-10'>Projects</div>
+            <p className='text-center text-4xl font-bold mb-10'>Projects</p>
             <ProjectList />
             <div className='w-full py-10 flex items-center justify-center '>
                 <a

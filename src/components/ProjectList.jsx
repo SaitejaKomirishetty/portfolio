@@ -80,7 +80,7 @@ const ProjectList = () => {
     ];
 
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2  gap-4'>
+        <div className='grid grid-cols-1 md:grid-cols-2  gap-4 space-y-2 md:space-y-0'>
             {projectList.map((project, index) => (
                 <ProjectCard key={index} project={project} />
             ))}

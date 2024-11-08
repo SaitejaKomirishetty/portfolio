@@ -147,7 +147,7 @@ const SkillsSection = () => {
                         className='flex flex-col justify-center items-center hover:scale-110 transition-transform duration-200'
                     >
                         <div className='flex items-center justify-center w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24'>
-                            <div className=''>{skill.icon}</div>
+                            <p className=''>{skill.icon}</p>
                         </div>
                         <p className='mt-2 text-sm md:text-base'>
                             {skill.title}

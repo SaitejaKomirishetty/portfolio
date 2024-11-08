@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
 import { FloatingDock } from './components/ui/floating-dock';
@@ -15,6 +15,7 @@ import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import CustomCursor from './components/CustomCursor';
 
 const links = [
     {
@@ -53,6 +54,27 @@ function App() {
     const experienceRef = useRef(null);
     const projectsRef = useRef(null);
     const contactRef = useRef(null);
+
+    const [isDesktop, setIsDesktop] = useState(false);
+
+    useEffect(() => {
+        const checkDeviceType = () => {
+            const userAgent = navigator.userAgent;
+            const isDesktopDevice = /windows|macintosh/i.test(userAgent);
+            setIsDesktop(isDesktopDevice);
+        };
+        checkDeviceType();
+        const handleResize = () => {
+            checkDeviceType();
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     return (
         <div>
             <div className='fixed top-0 bg-opacity-28 backdrop-blur-[7.6px] w-full z-50'>
@@ -64,6 +86,7 @@ function App() {
                     contactRef={contactRef}
                 />
             </div>
+            {isDesktop ? <CustomCursor /> : null}
             <div className='p-4 md:p-6 lg:p-8 xl:p-10 2xl:p-12 mx-5 md:mx-10 lg:mx-20 space-y-5  md:space-y-10 lg:space-y-16 xl:space-y-20 2xl:space-y-32'>
                 <HeroSection />
                 <section ref={aboutRef} id='about'>
@@ -73,7 +96,7 @@ function App() {
                     <SkillsSection />
                 </section>
                 <section ref={experienceRef} id='experience'>
-                    <Experience />
+                    <Experience isDesktop={isDesktop} />
                 </section>
                 <section ref={projectsRef} id='projects'>
                     <Projects />
