@@ -35,7 +35,12 @@ const CustomCursor = () => {
 
     // Mouseover and mouseout effects for anchor tags
     const handleMouseOver = (e) => {
-        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+        if (
+            e.target.tagName === 'A' ||
+            e.target.tagName === 'BUTTON' ||
+            e.target.tagName === 'INPUT' ||
+            e.target.tagName === 'TEXTAREA'
+        ) {
             if (cursorRef.current) {
                 cursorRef.current.style.width = '50px';
                 cursorRef.current.style.height = '50px';
@@ -67,7 +72,12 @@ const CustomCursor = () => {
     };
 
     const handleMouseOut = (e) => {
-        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
+        if (
+            e.target.tagName === 'A' ||
+            e.target.tagName === 'BUTTON' ||
+            e.target.tagName === 'INPUT' ||
+            e.target.tagName === 'TEXTAREA'
+        ) {
             if (cursorRef.current) {
                 cursorRef.current.style.width = '40px';
                 cursorRef.current.style.height = '40px';
