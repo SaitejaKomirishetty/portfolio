@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { useEffect, useRef, useState } from 'react';
 import { Canvas, extend, useThree, useFrame } from '@react-three/fiber';
 import bandImage from '../assets/image.png';
-import IdCard from '../assets/Idcard.png';
+import IdCard from '../assets/IdCard.png';
 import {
     useGLTF,
     useTexture,
